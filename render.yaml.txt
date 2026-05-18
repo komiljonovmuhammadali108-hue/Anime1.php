@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: animebot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn bot:app
+    envVars:
+      - key: TOKEN
+        value: YOUR_TOKEN_HERE
+      - key: WEBHOOK_URL
+        value: YOUR_RENDER_URL_HERE
